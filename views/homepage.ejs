@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('includes/head') %>
+
+<body>
+
+    <%- include('includes/header') %>
+
+    <main>
+        <!-- <h3>Homepage</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab optio minus modi aperiam aliquam molestias obcaecati nemo voluptas minima sequi laboriosam sapiente reiciendis et, commodi quas architecto ad ea.</p> -->
+        <form action="/register" method="POST">
+
+            <% errors.forEach(error => { %>
+            <p class="notice"><%= error %></p>
+            <% }) %>
+
+            <!-- ^ Note that the syntax above allows us to execute javascript code directly from within our ejs file! -->
+
+            <fieldset>
+            <legend>Create an Account</legend>
+
+            <label for="username"><small>Username</small></label>
+            <input type="text" id="username" name="username" autocomplete="off">
+
+            <label for="password"><small>Password</small></label>
+            <input type="password" id="password" name="password" autocomplete="off">
+
+            <br>
+            <button>Sign Up</button>
+        </fieldset>
+        </form>
+    </main>
+
+    <%- include('includes/footer') %>
+
+</body>
+</html>
